@@ -1,0 +1,18 @@
+---
+layout: default
+description: "对开发者友善的 Android 框架"
+---
+
+{% capture welcome_content %}{% endcapture %}
+{{ welcome_content|markdownify }}
+{% capture backtotop %}{% endcapture %}
+
+{% for post in site.posts reversed %}
+    {% if post.isChild != true and loop.first != true %}
+    {{ backtotop|markdownify }}
+    {% endif %}
+    <div id="{{ post.anchor }}">
+    {{ post.content }}
+    </div>
+{% endfor %}
+{{ backtotop|markdownify }}

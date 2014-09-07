@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}LightAndroid</title>
+        <meta name="description" content="{{ page.description }}"/>
+        <meta name="robots" content="index,follow,archive"/>
+        <meta property="og:description" content="Light Android Framework"/>
+        <meta property="og:url" content="http://www.phptherightway.com"/>
+        <meta property="og:type" content="website"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/styles/all.css"/>
+        <link rel="stylesheet" href="/styles/syntax.css"/>
+        <link rel="icon" href="/images/favicon.png" type="image/png"/>
+    </head>
+    <body>
+        <div class="interior-site-content">
+            <div class="pbh"><em>You are reading extended content about&hellip;</em></div>
+            {{ content }}
+            <a href="/">Return to Main Page</a>
+        </div>
+    </body>
+</html>

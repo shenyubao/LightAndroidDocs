@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}LightAndroid</title>
+        <meta name="description" content="{{ page.description }}"/>
+        <meta name="robots" content="index,follow,archive"/>
+        <meta property="og:description" content="Light Android Framework"/>
+        <meta property="og:type" content="website"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/styles/all.css"/>
+        <link rel="stylesheet" href="/styles/print.css" media="print, handheld"/>
+        <link rel="stylesheet" href="/styles/syntax.css"/>
+        <link rel="icon" href="/images/favicon.png" type="image/png"/>
+    </head>
+    <body>
+        <nav class="site-navigation">
+            <ul>
+                {% assign lastIsChild = false %}
+                {% for post in site.posts reversed %}
+                    {% if post.isChild != true %}
+                        {% if insideSection %}
+                            </ul>
+                            </li>
+                            {% assign insideSection = false %}
+                        {% endif %}
+                    {% endif %}
+                    <li><a href="/#{{ post.anchor }}">{{ post.title }}</a>
+                    {% if post.isChild %}
+                        </li>
+                    {% else %}
+                        <ul>
+                        {% assign insideSection = true %}
+                    {% endif %}
+                    {% assign lastIsChild = post.isChild %}
+                {% endfor %}
+                    </ul>
+                </li>
+                <li><a href="http://www.shenyubao.com" targt="new">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="site-content">
+            <header class="site-header" id="site-header">
+                <hgroup>
+                    <h1 class="site-title"><a href="/">LightAndroid</a></h1>
+                    <h2 class="site-slogan">可能不是性能最好的, 但是是写的最快的.</h2>
+                </hgroup>
+            </header>
+            {{ content }}
+             <div id="site-footer">
+                <footer class="site-footer" id="site-footer">
+                    <!-- <h2 class="epsilon">Contacts</h2> -->
+                    <ul>
+                        <li><a href="https://github.com/Shenyubao/LightAndroid">Github:LightAndroid</a></li>
+                        <li>QQ Group:8496350</li>
+                        <li>Email:ssybb1988@gmail.com</li>
+
+                    </ul>
+                </footer>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script src="/scripts/setup.js"></script>
+    </body>
+</html>
