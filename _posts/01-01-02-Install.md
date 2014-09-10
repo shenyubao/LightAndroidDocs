@@ -1,4 +1,7 @@
-#1.2 框架使用
+---
+anchor: install_title
+---
+#1.2 框架使用 {#install_title}
 
 ##AndroidStudio 中使用框架
 
